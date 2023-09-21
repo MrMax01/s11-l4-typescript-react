@@ -22,10 +22,10 @@ const HomePage = () => {
   }, []);
   return (
     <Container>
-      <h1 className="text-center"> Articles</h1>
-      <Row>
+      <h1 className="text-center mb-5"> Articles</h1>
+      <Row xs={1} sm={2} md={3} lg={4}>
         {articles?.results.map((article: ArticleObj) => (
-          <Col key={article.id}>
+          <Col key={article.id} className="mb-3">
             <Article data={article} />
           </Col>
         ))}

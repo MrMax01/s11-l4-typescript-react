@@ -1,6 +1,6 @@
-import { Card, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 const ArticleDetails = () => {
-  return <Card></Card>;
+  return <Container></Container>;
 };
 export default ArticleDetails;
