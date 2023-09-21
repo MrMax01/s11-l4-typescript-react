@@ -1,23 +1,8 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Article from "./Article";
-interface Article {
-  id: number;
-  title: string;
-  url: string;
-  image_url: string;
-  news_site: string;
-  summary: string;
-  published_at: string;
-  update_at: string;
-  featured: boolean;
-}
-interface PageArticles {
-  count: string;
-  next: string | null;
-  previus: string | null;
-  results: Article[];
-}
+import { PageArticles } from "../interfaces/PageArticles";
+import { ArticleObj } from "../interfaces/ArticleObj";
 
 const HomePage = () => {
   const [articles, setArticles] = useState<null | PageArticles>(null);
@@ -39,9 +24,9 @@ const HomePage = () => {
     <Container>
       <h1 className="text-center"> Articles</h1>
       <Row>
-        {articles?.results.map((article) => (
+        {articles?.results.map((article: ArticleObj) => (
           <Col key={article.id}>
-            <Article />
+            <Article data={article} />
           </Col>
         ))}
       </Row>
